@@ -11,6 +11,14 @@ git Clone https://github.com/jason2000-cpu/web-tic-tac-toe.git
 
 In the project directory, you can run:
 
+## `git checkout -b <your-name>`
+
+This creates a new branch with your name as the branch name
+
+## `git checkout <your-name>`
+
+This switches to your created branch
+
 ### `npm install`
 
 This installs all the necessary dependencies
