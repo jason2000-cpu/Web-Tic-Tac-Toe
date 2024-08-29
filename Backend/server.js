@@ -24,12 +24,15 @@ io.on('connection', (socket) => {
 
   socket.on('joinGame', (gameId, player) => {
     socket.join(gameId);
-    console.log(`User joined game: ${player}`);
 
     if (!games[gameId]) {
-      games[gameId] = { board: Array(9).fill(null), isXNext: true, player1: player };
-    } else if (games[gameId]) {
-      games[gameId].player2 = player;
+      games[gameId] = { board: Array(9).fill(null), isXNext: true };
+    } else if (!games[gameId].player1) {
+      games[gameId].player1 = player;
+      // console.log(`Player 1 joined game: ${player}`);
+    } else if(!games[gameId].player2) {
+      games[gameId].player2 = player
+      console.log(`Player 2 joined game: ${player}`);
     }
 
     socket.emit('updateGame', games[gameId]);
@@ -38,13 +41,9 @@ io.on('connection', (socket) => {
       let game = games[gameId];
       if (!game) return;
 
-      // game.board[index] = game.isXNext ? 'X' : 'O';
-      // game.isXNext = !game.isXNext;
-      // io.to(gameId).emit('updateGame', game);
-
-      if ((game.isXNext && player !== 'X') || (!game.isXNext && player !== 'O')) {
-        return;
-      }
+      // if ((game.isXNext && player !== 'X') || (!game.isXNext && player !== 'O')) {
+      //   return;
+      // }
 
       if (game.board[index] || calculateWinner(game.board)) return
 

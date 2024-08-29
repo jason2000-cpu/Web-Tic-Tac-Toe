@@ -25,8 +25,8 @@ const PopupForm = ({isOpen, togglePopup}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const resp = await createUser(formData);
-    console.log(resp.data.data);
-    localStorage.setItem("player1", JSON.stringify(resp.data.data))
+    console.log(resp);
+    localStorage.setItem("player1", JSON.stringify(resp.data))
     togglePopup(); 
     navigate('/home')
   };

@@ -9,8 +9,8 @@ function usePlayerHook() {
 
     useEffect(() => {
         axios.get(`${BASE_URL}/players`)
-        .then((data) => {
-            setPlayers(data);
+        .then((response) => {
+            setPlayers(response.data);
         })
         .catch((err => {
             console.log('Error While Fetching Players', err)
@@ -18,11 +18,17 @@ function usePlayerHook() {
     }, [])
 
     async function createUser(formData) {
+
+        const user = players.filter((player) => player.username === formData.username)
+        console.log(players)
+
+        if (user) return {data: user[0]};
+
         const response = await axios.post(`${BASE_URL}/players`, formData)
         console.log('Form submitted Hook:', formData);
         console.log(response);
         
-        return response;
+        return response.data;
     }
     return {
         players,

@@ -11,10 +11,10 @@ const TicTacToe = ({ gameId, player }) => {
   const [player1, setPlayer1] = useState(null);
   const [player2, setPlayer2] = useState(null);
 
-  const username = JSON.parse(localStorage.getItem('player1')).username;
+  const playerInStore = JSON.parse(localStorage.getItem('player1'));
 
   useEffect(() => {
-    socket.emit('joinGame', gameId, username);
+    socket.emit('joinGame', gameId, playerInStore.username);
 
     socket.on('updateGame', (game) => {
       setBoard(game.board);
@@ -27,12 +27,9 @@ const TicTacToe = ({ gameId, player }) => {
     return () => {
       socket.off('updateGame');
     };
-  }, [gameId, username]);
+  }, [gameId, playerInStore]);
 
   const handleClick = (index) => {
-    // if (winner || board[index]) return;
-    // console.log('Made a move')
-    // socket.emit('makeMove', { index, gameId });
     if (winner || board[index] || (isXNext && player !== 'X') || (!isXNext && player !== 'O')) {
       return;
     }
@@ -63,7 +60,7 @@ const TicTacToe = ({ gameId, player }) => {
   return (
     <div className='flex flex-col items-center justify-center h-fit'>
       <button className='border rounded-lg px-4 py-1' onClick={handleRestart}>Restart</button>
-      <h1>Player1: {player1}   Player2 : {player2}</h1>
+      {/* <h1>Player1: {player1}   Player2 : {player2}</h1> */}
       <Board board={board} handleClick={handleClick} />
       <div className='pt-72'>
         {winner ? <h2>Winner: {winner}</h2> : (

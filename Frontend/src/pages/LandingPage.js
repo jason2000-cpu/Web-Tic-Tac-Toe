@@ -7,11 +7,12 @@ function LandingPage() {
 
     const navigate = useNavigate();
 
-    const player = JSON.parse(localStorage.getItem('player1'));
+    const player = localStorage.getItem('player1');
 
 
     const togglePopup = () => {
-        player ? navigate('/home') : setIsOpen(!isOpen);
+        // player === undefined ? setIsOpen(!isOpen) : navigate('/home');
+        setIsOpen(!isOpen);
       };
 
     return (
