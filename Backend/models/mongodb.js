@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 
-// const MONGODB_URI = 'mongodb+srv://jasonmuturi2000:Jack2000@cluster0.9zd0dmd.mongodb.net/managermate?retryWrites=true&w=majority&appName=Cluster0';
-// const MONGODB_URI = 'mongodb+srv://JasonAdmin:Jack2000@cluster0.cyzgpn2.mongodb.net//tictactoe?retryWrites=true&w=majority&appName=Cluster0';
-const MONGODB_URI = 'mongodb://127.0.0.1:27017/tictactoe'
+const MONGODB_URI = 'mongodb+srv://JasonAdmin:Jack2000@cluster0.cyzgpn2.mongodb.net//tictactoe?retryWrites=true&w=majority&appName=Cluster0';
+// const MONGODB_URI = 'mongodb://127.0.0.1:27017/tictactoe'
 
 if (!MONGODB_URI) {
   throw new Error(
