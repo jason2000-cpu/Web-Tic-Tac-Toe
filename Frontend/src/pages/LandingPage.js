@@ -19,7 +19,7 @@ function LandingPage() {
         <div className="flex h-full">
             <div className=" w-1/2 space-y-20 mt-10">
                 <img src="/static/images/vanguard.png" alt="logo" />
-                <div className="m-8 space-y-16">
+                <div className="m-8 space-y-10">
                     <div className="flex justify-center">
                         <button onClick={togglePopup} className="bg-[#EF4C01] p-2 w-44 font-bold rounded-xl">
                             PLAY NOW
