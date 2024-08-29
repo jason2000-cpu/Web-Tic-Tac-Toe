@@ -1,0 +1,17 @@
+{
+    "functions": {
+      "server.js": {
+        "memory": 1024
+      }
+    },
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "https://shulehub-mrknw1mke-jasons-projects-2db5efd0.vercel.app/$1"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "api/server.js"
+      }
+    ]
+  }
