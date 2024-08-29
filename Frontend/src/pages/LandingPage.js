@@ -26,7 +26,7 @@ function LandingPage() {
                         </button>
                     </div>
                     <div className="">
-                        <p className="text-2xl font-mono"> 
+                        <p className="text-xl font-mono"> 
                         Welcome to Tic Tac Toe Online! Challenge your friends or test 
                         your skills against the AI in this classic game of strategy. 
                         Simple, fun, and quick—whether you're a beginner or a seasoned 
