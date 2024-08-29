@@ -4,8 +4,7 @@
   "description": "web_tic_tac_toe backend",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon server.js",
-    "build": "node server.js"
+    "test": "node server.js"
   },
   "author": "jason2000-cpu",
   "license": "ISC",
