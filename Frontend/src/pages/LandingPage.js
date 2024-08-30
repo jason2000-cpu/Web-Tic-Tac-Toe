@@ -18,7 +18,7 @@ function LandingPage() {
     return (
         <div className="flex h-full">
             <div className=" w-1/2 space-y-20 mt-10">
-                <img src="/static/images/vanguard.png" alt="logo" />
+                <img src="/static/images/vanguard.png" className='h-72' alt="logo" />
                 <div className="m-8 space-y-4">
                     <div className="flex justify-center">
                         <button onClick={togglePopup} className="bg-[#EF4C01] p-2 w-44 font-bold rounded-xl">
@@ -26,7 +26,7 @@ function LandingPage() {
                         </button>
                     </div>
                     <div className="">
-                        <p className="text-xl font-mono"> 
+                        <p className="font-mono text-2xl mt-10"> 
                         Welcome to Tic Tac Toe Online! Challenge your friends or test 
                         your skills against the AI in this classic game of strategy. 
                         Simple, fun, and quick—whether you're a beginner or a seasoned 
